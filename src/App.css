@@ -1,22 +1,24 @@
-.App {
-  text-align: center;
+body {
+    background-image: url(pic.jpg);
+    font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
+.main-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%;
+  height: auto;
+  background-color: rgba(45, 83, 100, 0.356);
+ border: 2px solid rgba(69, 69, 141, 0.746);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.input-font-size {
+  font-size: 24px;
 }
 
-.App-link {
-  color: #09d3ac;
+.card-color {
+  background-color: rgba(74, 112, 161, 0.993);
+  border: 2px solid rgba(130, 137, 168, 0.746);
 }
