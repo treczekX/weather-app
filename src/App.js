@@ -51,14 +51,14 @@ class App extends Component {
           coord_lon: data.coord.lon,
         })
       })
-      .catch(error => {
-        console.log(error);
-        const { value } = this.state;
-        this.setState({
-          error: true,
-          city: value,
-        })
-      })
+      // .catch(error => {
+      //   console.log(error);
+      //   const { value } = this.state;
+      //   this.setState({
+      //     error: true,
+      //     city: value,
+      //   })
+      // })
 
   }
 
