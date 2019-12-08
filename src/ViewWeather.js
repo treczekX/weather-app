@@ -3,6 +3,7 @@ import './App.css';
 
 const ViewWeather = (props) => {
     const {
+
         city,
         country,
         date,
@@ -25,6 +26,8 @@ const info = (
 )
 
     let output = null;
+
+   
 
     if (!error && city) {
         output = (

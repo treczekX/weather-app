@@ -49,6 +49,8 @@ class App extends Component {
           wind: data.wind.speed,
           coord_lat: data.coord.lat,
           coord_lon: data.coord.lon,
+          value:''
+
         })
       })
       .catch(error => {
