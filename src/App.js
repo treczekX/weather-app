@@ -30,7 +30,7 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const API = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=05508bb378ad891b493b0c886cca7a57&units=metric&lang=pl`;
+    const API = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&appid=05508bb378ad891b493b0c886cca7a57&units=metric&lang=pl`;
     axios.get(API)
       .then(resp => resp.data)
       .then(data => {
