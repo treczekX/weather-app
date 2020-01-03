@@ -6,7 +6,9 @@ import axios from 'axios';
 
 
 class App extends Component {
-  state = {
+  constructor(props){
+    super(props)
+  this.state = {
     value: '',
     date: '',
     country: '',
@@ -21,6 +23,7 @@ class App extends Component {
     coord_lon: '',
     error: false,
   }
+}
 
   handleChange = (e) => {
     this.setState({
