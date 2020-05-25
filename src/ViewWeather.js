@@ -15,12 +15,19 @@ const ViewWeather = (props) => {
         weather,
         coord_lat,
         coord_lon,
-        error
+        error,
+        value
     } = props.weather
 
 const info = (
-    <div className="row">
-    <h2 className='col-12 p-3 text-warning bg-secondary text-center'>Nie posiadamy w bazie danych miasta <span className= 'text-danger px-2'>{city.toUpperCase()}</span></h2>
+    <div>
+    <p class="info">Nie posiadamy w bazie danych miasta: <div class="city">{city.toUpperCase()}</div></p>
+    </div>
+)
+
+const info2 = (
+    <div>
+    <p class="info">Proszę podać nazwę miasta!!!</p>
     </div>
 )
 
@@ -30,48 +37,30 @@ const info = (
 
     if (!error && city) {
         output = (
-            
-            <div className="container text-center">
-            <div className="cards py-5 p-5 card-color">
-            <div className="row">
-                <h1 className='col-6 text-center text-success'>{city.toUpperCase()}</h1>
-                <h1 className='col-6'>{country.toUpperCase()}</h1>
+            <div class="output">
+            <div className="main-info">
+                <h1>{city.toUpperCase()}</h1>
+                <h1>{country.toUpperCase()}</h1>
                 </div>
-                <div className="row"> 
-                <h2 className='py-4 col-6'>{date}</h2>
-                <h2 className='py-4 col-6'>Temperatura: {temp}&deg;C</h2>
+                <div className="manor-info">
+                <span>{date}</span>
+                <span>Temperatura: <span class='temp'>{temp}&deg;C</span></span>
+                {/* {weather} */}
                 </div>
-                <div>{weather}</div>
-                <div className="row mb-2">
-                <div className="col-6">
-                <h4>Minimalna temperatura: <span className="text-danger">{minTemp}&deg;C</span></h4>
-                </div>
-                <div className="col-6">
-                <h4>Maksymalna temperatura: <span className="text-success">{maxTemp}&deg;C</span></h4>
-                </div>
-                </div>
-                <div className="row mb-2">
-                <div className="col-6">
-                <h4>Ciśnienie atmosferyczne: {pressure}HPa</h4>
-                </div>
-                <div className="col-6">
-                <h4>Wilgotność powietrza: {humidity}%</h4>
-                </div>
-                </div>
-                <div className="row">
-                <div className="col-6">
-                <h4>Siła wiatru: {wind}m/s</h4>
-                </div>
-                <div className="col-6">
-                <h4>Koordynaty: {coord_lat}N, {coord_lon}E</h4>
-                </div>
-                </div>
+                <div className="minor-info"> 
+                <span>Minimalna temperatura:{minTemp}&deg;C</span>
+                <span>Maksymalna temperatura:{maxTemp}&deg;C</span>
+                <span>Ciśnienie atmosferyczne: {pressure}HPa</span>
+                <span>Wilgotność powietrza: {humidity}%</span>
+                <span>Siła wiatru: {wind}m/s</span>
+                <span>Koordynaty: {coord_lat}N, {coord_lon}E</span>
                 </div>
                 </div>
         )
     }
     return (
-        <div>{error ? info: output}</div>
+
+     <div>{error ? info: output}</div>
     );
 }
 export default ViewWeather;

@@ -71,10 +71,8 @@ class App extends Component {
     const {value}=this.state;
     return (
       <>
-      <div className="main-container p-4 ">
-      <div className="row">
-      <h1 className='col-12 my-5 text-center'>Aplikacja pogodowa 2019</h1>
-      </div>
+      <div className="main-container">
+      <h1 class="header">Aplikacja pogodowa 2020</h1>
         <SearchCity value={value} change={this.handleChange} submit={this.handleSubmit} />
         <ViewWeather weather={this.state} />
       </div>
